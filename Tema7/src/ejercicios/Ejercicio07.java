@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 import utiles.Constantes;
 
-public class Ejercicio7 {
+public class Ejercicio07 {
 
 	public static void main(String[] args) {
 		
@@ -63,7 +63,7 @@ public class Ejercicio7 {
 		
 		try (Connection con = conexion()) {
 			
-			ResultSet rs = con.createStatement().executeQuery("SELECT * FROM cursos");
+			ResultSet rs = con.createStatement().executeQuery("SELECT * FROM estudiantes");
 			
 			while (rs.next()) {
 				
@@ -82,20 +82,20 @@ public class Ejercicio7 {
 	}
 
 	
-	static private Connection conexion() {
-		
-		Connection con = null;
-		
-		try  {
+		static private Connection conexion() {
 			
-			con = DriverManager.getConnection(Constantes.url, Constantes.usuario, Constantes.contraseña);
+			Connection con = null;
 			
-		} catch(SQLException e) {
-			System.out.println("ERROR con la conexión");
+			try  {
+				
+				con = DriverManager.getConnection(Constantes.url, Constantes.usuario, Constantes.contraseña);
+				
+			} catch(SQLException e) {
+				System.out.println("ERROR con la conexión");
+			}
+			
+			return con;
+			
 		}
-		
-		return con;
-		
-	}
 
 }

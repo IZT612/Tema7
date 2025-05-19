@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import utiles.Constantes;
 
-public class Ejercicio5 {
+public class Ejercicio05 {
 
 	public static void main(String[] args) {
 		
